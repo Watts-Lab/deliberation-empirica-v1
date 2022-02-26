@@ -1,0 +1,12 @@
+FROM node:16-bullseye
+
+WORKDIR /app
+
+COPY package.storybook.json package.json
+RUN yarn install
+
+COPY /client ./client
+COPY /public ./public
+COPY .storybook ./.storybook
+
+CMD ["yarn", "storybook"]
