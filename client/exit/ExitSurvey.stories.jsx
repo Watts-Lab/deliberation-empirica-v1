@@ -25,7 +25,5 @@ const player = {
 //👇 Each story then reuses that template
 export const Primary = Template.bind({});
 Primary.args = {
-   primary: true,
-   label: 'ExitSurvey',
    player: player
 };

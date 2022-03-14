@@ -1,18 +1,18 @@
 import React from 'react';
 
-import About from './About';
+import SocialExposure from './SocialExposure';
 
 export default {
   /* 👇 The title prop is optional.
   * See https://storybook.js.org/docs/react/configure/overview#configure-story-loading
   * to learn how to generate automatic titles
   */
-  title: 'About',
-  component: About,
+  title: 'SocialExposure',
+  component: SocialExposure,
 };
 
 //👇 We create a “template” of how args map to rendering
-const Template = (args) => <About {...args} />;
+const Template = (args) => <SocialExposure {...args} />;
 
 const playerMock = {
   data: {"name": "Ponder Stibbons"},
@@ -21,9 +21,14 @@ const playerMock = {
   }
 };
 
+const roundMock = {
+    _id: "uaL438h7mZyKzL7Dx"
+};
+
 
 //👇 Each story then reuses that template
 export const Primary = Template.bind({});
 Primary.args = {
-   player: playerMock
+   player: playerMock,
+   round: roundMock
 };

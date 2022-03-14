@@ -1,7 +1,8 @@
 module.exports = {
   "stories": [
     "../client/**/*.stories.mdx",
-    "../client/**/*.stories.@(js|jsx|ts|tsx)"
+    "../client/**/*.stories.@(js|jsx|ts|tsx)",
+    "../client/game/SocialExposure.stories.jsx"
   ],
   "addons": [
     "@storybook/addon-links",
