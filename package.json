@@ -2,8 +2,22 @@
   "name": "name",
   "private": true,
   "scripts": {
-    "start": "meteor run"
+    "start": "meteor run",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "chromatic": "chromatic --exit-zero-on-changes"
   },
+  "devDependencies": {
+    "@babel/core": "^7.17.4",
+    "@storybook/addon-actions": "^6.4.19",
+    "@storybook/addon-essentials": "^6.4.19",
+    "@storybook/addon-interactions": "^6.4.19",
+    "@storybook/addon-links": "^6.4.19",
+    "@storybook/react": "^6.4.19",
+    "@storybook/testing-library": "^0.0.9",
+    "babel-loader": "^8.2.3",
+    "chromatic": "^6.5.1"
+},
   "dependencies": {
     "@babel/runtime": "^7.10.2",
     "bcrypt": "^5.0.0",

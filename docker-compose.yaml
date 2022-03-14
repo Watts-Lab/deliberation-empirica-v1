@@ -5,6 +5,7 @@ services:
     build: .
     ports:
       - 3000:3000  # empirica
+      - 6006:6006  # storybook
     volumes:
       # need to be careful about overwriting `/node_modules` in container
       # hack from https://burnedikt.com/dockerized-node-development-and-mounting-node-volumes/#exclude-node_modules-from-the-mount  
@@ -12,20 +13,22 @@ services:
       - ./public:/app/public
       - ./server:/app/server
       - ./.meteor:/app/.meteor
+      - ./.storybook:/app/.storybook
+      - ./package.storybook.json:/app/package.json
       
       # also need to include any files that are not in these directories. This is really a pain.
       - ./package.json:/app/package.json
       - ./package-lock.json:/app/package-lock.json
-  deliberation-storybook:
-    platform: linux/amd64
-    build: 
-      context: .
-      dockerfile: Dockerfile.storybook
-    ports:
-      - 6006:6006  # storybook
-    volumes:
-      - ./.storybook:/app/.storybook
-      - ./package.storybook.json:/app/package.json
-      - ./client:/app/client
-      - ./public:/app/public
+  # deliberation-storybook:
+  #   platform: linux/amd64
+  #   build: 
+  #     context: .
+  #     dockerfile: Dockerfile.storybook
+  #   ports:
+  #     - 6006:6006  # storybook
+  #   volumes:
+  #     - ./.storybook:/app/.storybook
+  #     - ./package.storybook.json:/app/package.json
+  #     - ./client:/app/client
+  #     - ./public:/app/public
       
