@@ -1,6 +1,6 @@
 import React from "react";
 
-//import { Centered } from "meteor/empirica:core";
+import { Centered } from "meteor/empirica:core";
 
 const Radio = ({ selected, name, value, label, onChange }) => (
   <label>
@@ -34,7 +34,7 @@ export default class ExitSurvey extends React.Component {
     const { age, gender, strength, fair, feedback, education } = this.state;
 
     return (
-      <div>
+      <Centered>
         <div className="exit-survey">
           <h1> Exit Survey </h1>
           <p>
@@ -164,7 +164,7 @@ export default class ExitSurvey extends React.Component {
             <button type="submit">Submit</button>
           </form>
         </div>
-      </div>
+      </Centered>
     );
   }
 }

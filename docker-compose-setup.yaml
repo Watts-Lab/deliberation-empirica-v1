@@ -8,4 +8,4 @@ services:
     tty: true        # docker run -t
 
     volumes:
-      - ./src:/app/
+      - ./tmp:/app/

@@ -5,7 +5,7 @@ WORKDIR /app
 RUN curl https://install.meteor.com/ -k | sh
 
 COPY package.json .
-#COPY package-lock.json .
+COPY package-lock.json .
 RUN meteor npm install
 
 COPY /client ./client
@@ -13,6 +13,7 @@ COPY /public ./public
 COPY /server ./server
 COPY /.meteor ./.meteor
 COPY .storybook ./.storybook
+COPY .babelrc .
 
 RUN mkdir -p .meteor/local
 RUN chmod -R 700 .meteor/local

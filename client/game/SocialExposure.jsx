@@ -1,5 +1,5 @@
 import React from "react";
-import { Call } from "empirica-videocall";
+import Slider from "meteor/empirica:slider";
 
 export default class SocialExposure extends React.Component {
   renderSocialInteraction(otherPlayer) {
@@ -22,13 +22,20 @@ export default class SocialExposure extends React.Component {
   }
 
   render() {
-    const { round, player } = this.props;
-    const roomName = round._id;
+    const { game, player } = this.props;
+
+    const otherPlayers = _.reject(game.players, p => p._id === player._id);
+
+    if (otherPlayers.length === 0) {
+      return null;
+    }
 
     return (
       <div className="social-exposure">
-        <Call player={player} roomName={roomName} />
-      
+        <p>
+          <strong>There are {otherPlayers.length} other players:</strong>
+        </p>
+        {otherPlayers.map(p => this.renderSocialInteraction(p))}
       </div>
     );
   }
