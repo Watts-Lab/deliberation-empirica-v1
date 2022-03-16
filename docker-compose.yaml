@@ -26,7 +26,6 @@ services:
       - 6006:6006  # storybook
     volumes:
       - ./.storybook:/app/.storybook
-      - ./package.storybook.json:/app/package.json
       - ./client:/app/client
       - ./public:/app/public
       - ./package.json:/app/package.json
