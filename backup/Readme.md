@@ -1,3 +1,8 @@
+TODO: 
+It seems that meteor and empirica want one version of react, while storybook wants a different one. I should be able to create separate containers for developing in storybook and for hosting the experiment itself, so that they can each have their own version of react.
+
+
+
 # Deliberation
 
 _This project was generated with [create-empirica-app](https://github.com/empiricaly/create-empirica-app)._
@@ -109,3 +114,8 @@ be available in the app at `http://localhost:3000/my-logo.jpeg`.
 - React Tutorial: [https://reactjs.org/tutorial/tutorial.html](https://reactjs.org/tutorial/tutorial.html)
 - LESS Intro: [http://lesscss.org/#overview](http://lesscss.org/#overview)
 - JavaScript Tutorial: [https://javascript.info/](https://javascript.info/)
+
+
+# storybook
+
+Runs in its own container
